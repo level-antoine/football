@@ -126,6 +126,13 @@ action_release_dribble = CoreAction(e_BackendAction.release_dribble,
                                     "release_dribble")
 
 # ***** Define some action sets *****
+action_set_simple = [
+    action_left, action_top, action_right,
+    action_bottom, action_short_pass, action_shot,
+    action_sprint, action_sliding, action_dribble, action_release_dribble,
+    action_release_sprint
+]
+
 action_set_v1 = [
     action_idle, action_left, action_top_left, action_top,
     action_top_right, action_right, action_bottom_right,
@@ -150,6 +157,7 @@ full_action_set = action_set_v2 + [
 action_set_dict = {
     "default": action_set_v1,
     "v2": action_set_v2,
+    "simple": action_set_simple,
     # "full" action set is needed by the play_game script.
     # Don't use it for training models.
     "full": full_action_set,
